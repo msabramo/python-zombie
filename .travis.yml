@@ -5,15 +5,14 @@ python:
   - "3.2"
 env:
   - PYTHONPATH='.'
+  - PYTHON=python2
 branches:
   only:
     - next
 before_install:
   - npm update
   - npm cache clean
-  - ~/virtualenv/python2.7/bin/activate
   - npm install zombie
-  - ~/virtualenv/$TRAVIS_PYTHON_VERSION/bin/activate
 install: 
   - pip install . --use-mirrors
   - pip install nose
